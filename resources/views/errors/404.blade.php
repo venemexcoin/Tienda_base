@@ -208,7 +208,7 @@
 									<a href="/checkout" class="link-term mercado-item-title">Checkout</a>
 								</li>
 								<li class="menu-item">
-									<a href="{{route('user.contactact')}}" class="link-term mercado-item-title">Contact Us</a>
+									<a href="contact-us.html" class="link-term mercado-item-title">Contact Us</a>
 								</li>																	
 							</ul>
 						</div>
@@ -218,7 +218,7 @@
 		</div>
 	</header>
 
-	{{$slot}}
+	@livewire('error404-component')
 
 	<footer id="footer">
 		<div class="wrap-footer-content footer-style-1">
@@ -309,9 +309,9 @@
 								<h3 class="item-header">Sign up for newsletter</h3>
 								<div class="item-content">
 									<div class="wrap-newletter-footer">
-										<form wire:submit.prevent="sendsuscription">
-											<input type="email" class="input-email" placeholder="Enter your email address">
-											<button type="submit" class="btn-submit">Subscribe</button>
+										<form action="#" class="frm-newletter" id="frm-newletter">
+											<input type="email" class="input-email" name="email" value="" placeholder="Enter your email address">
+											<button class="btn-submit">Subscribe</button>
 										</form>
 									</div>
 								</div>

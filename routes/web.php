@@ -12,10 +12,13 @@ use App\Http\Livewire\HeaderSearchComponent;
 use App\Http\Livewire\SearchComponent;
 use App\Http\Livewire\WishlistComponent;
 use App\Http\Livewire\ThankyouComponent;
+use App\Http\Livewire\SuscritionComponent;
 
 use App\Http\Livewire\User\UserDashboardComponet;
 use App\Http\Livewire\User\UserOrdersComponent;
 use App\Http\Livewire\User\UserOrderDetailsComponent;
+use App\Http\Livewire\User\UserContactactComponent;
+
 
 use App\Http\Livewire\Admin\AdminDashboardComponet;
 use App\Http\Livewire\Admin\AdminCategoryComponent;
@@ -35,6 +38,7 @@ use App\Http\Livewire\Admin\AdminEditCouponComponent;
 use App\Http\Livewire\Admin\AdminOrderComponent;
 use App\Http\Livewire\Admin\AdminOrderDetailsComponent;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -49,6 +53,10 @@ use App\Http\Livewire\Admin\AdminOrderDetailsComponent;
 // Route::get('/', function () {
 //     return view('welcome');
 // });
+
+ Route::get('/mensaje', function () {
+     return view('mensaje');
+ });
 
 /* Rutas de acceso comunes */
 
@@ -65,6 +73,8 @@ Route::get('/wishlist',WishlistComponent::class)->name('product.wishlist');
 
 Route::get('/thank-you',ThankyouComponent::class)->name('thankyou');
 
+Route::get('/suscrption', SuscritionComponent::class)->name('all.suscrption');
+
 // Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 //     return view('dashboard');
 // })->name('dashboard');
@@ -74,6 +84,8 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function() {
     Route::get('/user/dashboard',UserDashboardComponet::class)->name('user.dashboard');
     Route::get('/user/orders',UserOrdersComponent::class)->name('user.orders');
     Route::get('/user/orders/{order_id}',UserOrderDetailsComponent::class)->name('user.orderdetails');
+    Route::get('/user/contactact',UserContactactComponent::class)->name('user.contactact');
+    
 });
 
 //For Admin or Customer
