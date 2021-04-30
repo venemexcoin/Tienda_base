@@ -13,7 +13,7 @@ class SuscritionComponent extends Component
 {
     public $suscrition;
 
-    public function sendsuscription()
+    public function sendSuscription()
     {
         $this->validate([
 
@@ -27,8 +27,7 @@ class SuscritionComponent extends Component
         ];
 
         Mail::to("chamocelldeveloper@gmail.com")->send(new TestSuscription($suscrition));
-        session()->flash('message','Email has been sent successfully!');
-        
+        session()->flash('message', 'Email has been sent successfully!');
     }
 
     public function render()

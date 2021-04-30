@@ -64,7 +64,7 @@
 									<a title="Dollar (USD)" href="#">Dollar (USD)<i class="fa fa-angle-down" aria-hidden="true"></i></a>
 									<ul class="submenu curency" >
 										<li class="menu-item" >
-											<a href="#"><div id="google_translate_element" class="google"></div></a>
+											<a title="Euro (EUR)" href="#">Pesos (MXN)</a>
 										</li>
 										<li class="menu-item" >
 											<a title="Euro (EUR)" href="#">Euro (EUR)</a>
@@ -309,9 +309,11 @@
 								<h3 class="item-header">Sign up for newsletter</h3>
 								<div class="item-content">
 									<div class="wrap-newletter-footer">
-										<form wire:submit.prevent="sendsuscription">
-											<input type="email" class="input-email" placeholder="Enter your email address">
-											<button type="submit" class="btn-submit">Subscribe</button>
+										<form wire:submit.prevent="sendSuscription">
+											
+											<input type="email" placeholder="Enter your email address" class="form-control input-md" wire:model='suscrition' />
+											<button type="submit" class="btn-submit">Emviar</button>
+											@error('email') <p class="text-danger">{{$message}}</p> @enderror
 										</form>
 									</div>
 								</div>
