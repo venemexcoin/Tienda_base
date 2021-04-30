@@ -13,6 +13,7 @@ use App\Http\Livewire\SearchComponent;
 use App\Http\Livewire\WishlistComponent;
 use App\Http\Livewire\ThankyouComponent;
 use App\Http\Livewire\SuscritionComponent;
+use App\Http\Livewire\aboutComponent;
 
 use App\Http\Livewire\User\UserDashboardComponet;
 use App\Http\Livewire\User\UserOrdersComponent;
@@ -74,6 +75,7 @@ Route::get('/wishlist',WishlistComponent::class)->name('product.wishlist');
 Route::get('/thank-you',ThankyouComponent::class)->name('thankyou');
 
 Route::get('/suscrption', SuscritionComponent::class)->name('all.suscrption');
+Route::get('about',aboutComponent::class)->name('about');
 
 // Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 //     return view('dashboard');
