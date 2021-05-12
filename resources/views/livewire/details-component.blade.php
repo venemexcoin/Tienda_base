@@ -157,14 +157,7 @@
                                                             <input type="radio" id="rated-5" name="rating" value="5" checked="checked">
                                                         </p>
                                                     </div>
-                                                    <p class="comment-form-author">
-                                                        <label for="author">Name <span class="required">*</span></label> 
-                                                        <input id="author" name="author" type="text" value="">
-                                                    </p>
-                                                    <p class="comment-form-email">
-                                                        <label for="email">Email <span class="required">*</span></label> 
-                                                        <input id="email" name="email" type="email" value="" >
-                                                    </p>
+                                                    
                                                     <p class="comment-form-comment">
                                                         <label for="comment">Your review <span class="required">*</span>
                                                         </label>

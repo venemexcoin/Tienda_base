@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateHomeLogosTable extends Migration
+class CreateReviewsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,14 @@ class CreateHomeLogosTable extends Migration
      */
     public function up()
     {
-        Schema::create('home_logos', function (Blueprint $table) {
+        Schema::create('reviews', function (Blueprint $table) {
+            
             $table->id();
-            $table->string('name');
-            $table->string('link');
-            $table->string('image');
+            $table->integer('rating');
+            $table->text('Comment');
+            $table->bigInteger('order_item_id')->unsigned();
             $table->timestamps();
+            $table->foreign('order_item_id')->references('id')->on('order_items')->onDelete('cascade');
         });
     }
 
@@ -29,6 +31,6 @@ class CreateHomeLogosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('home_logos');
+        Schema::dropIfExists('reviews');
     }
 }

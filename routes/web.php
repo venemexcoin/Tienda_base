@@ -14,11 +14,13 @@ use App\Http\Livewire\WishlistComponent;
 use App\Http\Livewire\ThankyouComponent;
 use App\Http\Livewire\SuscritionComponent;
 use App\Http\Livewire\aboutComponent;
+use App\Http\Livewire\logoComponent;
 
 use App\Http\Livewire\User\UserDashboardComponet;
 use App\Http\Livewire\User\UserOrdersComponent;
 use App\Http\Livewire\User\UserOrderDetailsComponent;
 use App\Http\Livewire\User\UserContactactComponent;
+use App\Http\Livewire\User\UserReviewComponent;
 
 
 use App\Http\Livewire\Admin\AdminDashboardComponet;
@@ -38,6 +40,9 @@ use App\Http\Livewire\Admin\AdminAddCouponComponent;
 use App\Http\Livewire\Admin\AdminEditCouponComponent;
 use App\Http\Livewire\Admin\AdminOrderComponent;
 use App\Http\Livewire\Admin\AdminOrderDetailsComponent;
+use App\Http\Livewire\Admin\AdminHomeLogoComponent;
+use App\Http\Livewire\Admin\AdminAddHomeLogoComponent;
+use App\Http\Livewire\Admin\AdminEditHomeLogoComponent;
 
 
 /*
@@ -76,6 +81,7 @@ Route::get('/thank-you',ThankyouComponent::class)->name('thankyou');
 
 Route::get('/suscrption', SuscritionComponent::class)->name('all.suscrption');
 Route::get('about',aboutComponent::class)->name('about');
+Route::get('logoHome',logoComponent::class)->name('logohome');
 
 // Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 //     return view('dashboard');
@@ -87,6 +93,7 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function() {
     Route::get('/user/orders',UserOrdersComponent::class)->name('user.orders');
     Route::get('/user/orders/{order_id}',UserOrderDetailsComponent::class)->name('user.orderdetails');
     Route::get('/user/contactact',UserContactactComponent::class)->name('user.contactact');
+    Route::get('/user/review/{order_item_id}',UserReviewComponent::class)->name('user.review');
     
 });
 
@@ -115,4 +122,9 @@ Route::middleware(['auth:sanctum','verified','authadmin'])->group(function() {
     Route::get('/admin/orders',AdminOrderComponent::class)->name('admin.orders');
     
     Route::get('/admin/orders/{order_id}',AdminOrderDetailsComponent::class)->name('admin.orderdetails');
+
+    Route::get('/admin/logo',AdminHomeLogoComponent::class)->name('admin.logo');
+    Route::get('/admin/logo/add',AdminAddHomeLogoComponent::class)->name('admin.addlogo');
+    Route::get('/admin/logo/edit/{logo_id}',AdminEditHomeLogoComponent::class)->name('admin.editlogo');
+    
 });
