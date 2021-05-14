@@ -60,13 +60,17 @@ use App\Http\Livewire\Admin\AdminEditHomeLogoComponent;
 //     return view('welcome');
 // });
 
+Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+    return view('dashboard');
+})->name('dashboard');
+
  Route::get('/mensaje', function () {
      return view('mensaje');
  });
 
 /* Rutas de acceso comunes */
 
-Route::get('/', HomeComponent::class);
+Route::get('/', HomeComponent::class)->name('index');
 
 Route::get('/shop', ShopComponent::class);
 Route::get('/cart', CartComponent::class)->name('product.cart');
