@@ -50,10 +50,7 @@
 						</div>
 						<div class="topbar-menu right-menu">
 							<ul>
-								<li class="menu-item lang-menu menu-item-has-children parent">
-									<a href="#"><div id="google_translate_element" class="google"></div></a>
 								
-								</li>
 								<li class="menu-item menu-item-has-children parent" >
 									<a title="Dollar (USD)" href="#">Dollar (USD)<i class="fa fa-angle-down" aria-hidden="true"></i></a>
 									<ul class="submenu curency" >
@@ -99,6 +96,9 @@
 													<a title="All Orders" href="{{route('admin.orders')}}">All Order</a>
 												</li>
 												<li class="menu-item">
+													<a title="Contact Messages" href="{{route('admin.contact')}}">Contact Messages</a>
+												</li>
+												<li class="menu-item">
 													<a title="All Orders" href="{{route('admin.logo')}}">Home Logo</a>
 												</li>
 												<li class="menu-item" >
@@ -125,6 +125,9 @@
 												</li>
 												<li class="menu-item" >
 													<a title="My Orders" href="{{route('user.orders')}}">My Orders</a>
+												</li>
+												<li class="menu-item" >
+													<a title="Change Password" href="{{route('user.changepassword')}}">Change Password</a>
 												</li>
 												<li class="menu-item" >
 													<a title="Dashboard" href="{{route('logout')}}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
@@ -203,7 +206,7 @@
 									<a href="/checkout" class="link-term mercado-item-title">Checkout</a>
 								</li>
 								<li class="menu-item">
-									<a href="{{route('user.contactact')}}" class="link-term mercado-item-title">Contact Us</a>
+									<a href="/contact-us" class="link-term mercado-item-title">Contact Us</a>
 								</li>																	
 							</ul>
 						</div>
@@ -487,11 +490,7 @@
 	<script src="https://cdn.tiny.cloud/1/bpnevz47wcpmdx4x7bjgq0vlvm45t42wqaipy1ypn9bu4jh4/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
 	<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
-	<script type="text/javascript">
-		function googleTranslateElementInit() {
-			new google.translate.TranslateElement({pageLanguage: 'en', includedLanguages: 'es,ru', layout: google.translate.TranslateElement.InlineLayout.SIMPLE, gaTrack: true}, 'google_translate_element');
-				}
-		</script>
+	
 	
 
 	@livewireScripts

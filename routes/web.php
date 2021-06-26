@@ -15,12 +15,14 @@ use App\Http\Livewire\ThankyouComponent;
 use App\Http\Livewire\SuscritionComponent;
 use App\Http\Livewire\aboutComponent;
 use App\Http\Livewire\logoComponent;
+use App\Http\Livewire\ContactComponent;
 
 use App\Http\Livewire\User\UserDashboardComponet;
 use App\Http\Livewire\User\UserOrdersComponent;
 use App\Http\Livewire\User\UserOrderDetailsComponent;
 use App\Http\Livewire\User\UserContactactComponent;
 use App\Http\Livewire\User\UserReviewComponent;
+use App\Http\Livewire\User\UserChangePasswordComponent;
 
 
 use App\Http\Livewire\Admin\AdminDashboardComponet;
@@ -43,6 +45,7 @@ use App\Http\Livewire\Admin\AdminOrderDetailsComponent;
 use App\Http\Livewire\Admin\AdminHomeLogoComponent;
 use App\Http\Livewire\Admin\AdminAddHomeLogoComponent;
 use App\Http\Livewire\Admin\AdminEditHomeLogoComponent;
+use App\Http\Livewire\Admin\AdminContactComponent;
 
 
 /*
@@ -84,8 +87,9 @@ Route::get('/wishlist',WishlistComponent::class)->name('product.wishlist');
 Route::get('/thank-you',ThankyouComponent::class)->name('thankyou');
 
 Route::get('/suscrption', SuscritionComponent::class)->name('all.suscrption');
-Route::get('about',aboutComponent::class)->name('about');
-Route::get('logoHome',logoComponent::class)->name('logohome');
+Route::get('/about',aboutComponent::class)->name('about');
+Route::get('/logoHome',logoComponent::class)->name('logohome');
+Route::get('/contact-us',ContactComponent::class)->name('contact');
 
 // Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 //     return view('dashboard');
@@ -98,6 +102,7 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function() {
     Route::get('/user/orders/{order_id}',UserOrderDetailsComponent::class)->name('user.orderdetails');
     Route::get('/user/contactact',UserContactactComponent::class)->name('user.contactact');
     Route::get('/user/review/{order_item_id}',UserReviewComponent::class)->name('user.review');
+    Route::get('/user/change-password', UserChangePasswordComponent::class)->name('user.changepassword');
     
 });
 
@@ -130,5 +135,7 @@ Route::middleware(['auth:sanctum','verified','authadmin'])->group(function() {
     Route::get('/admin/logo',AdminHomeLogoComponent::class)->name('admin.logo');
     Route::get('/admin/logo/add',AdminAddHomeLogoComponent::class)->name('admin.addlogo');
     Route::get('/admin/logo/edit/{logo_id}',AdminEditHomeLogoComponent::class)->name('admin.editlogo');
+
+    Route::get('/admin/contact-us', AdminContactComponent::class)->name('admin.contact');
     
 });
