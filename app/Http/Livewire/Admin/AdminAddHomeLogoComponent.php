@@ -14,9 +14,10 @@ class AdminAddHomeLogoComponent extends Component
     public $name;
     public $link;
     public $image;
+    public $imagename;
 
 
-    public function addLogo()
+    public function saveLogo()
     {
         $logo = new HomeLogo();
         $logo->name  = $this->name;

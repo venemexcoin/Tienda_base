@@ -17,6 +17,7 @@ use App\Http\Livewire\aboutComponent;
 use App\Http\Livewire\logoComponent;
 use App\Http\Livewire\ContactComponent;
 
+
 use App\Http\Livewire\User\UserDashboardComponet;
 use App\Http\Livewire\User\UserOrdersComponent;
 use App\Http\Livewire\User\UserOrderDetailsComponent;
@@ -46,6 +47,7 @@ use App\Http\Livewire\Admin\AdminHomeLogoComponent;
 use App\Http\Livewire\Admin\AdminAddHomeLogoComponent;
 use App\Http\Livewire\Admin\AdminEditHomeLogoComponent;
 use App\Http\Livewire\Admin\AdminContactComponent;
+use App\Http\Livewire\Admin\AdminSettingComponent;
 
 
 /*
@@ -90,6 +92,7 @@ Route::get('/suscrption', SuscritionComponent::class)->name('all.suscrption');
 Route::get('/about',aboutComponent::class)->name('about');
 Route::get('/logoHome',logoComponent::class)->name('logohome');
 Route::get('/contact-us',ContactComponent::class)->name('contact');
+
 
 // Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 //     return view('dashboard');
@@ -137,5 +140,7 @@ Route::middleware(['auth:sanctum','verified','authadmin'])->group(function() {
     Route::get('/admin/logo/edit/{logo_id}',AdminEditHomeLogoComponent::class)->name('admin.editlogo');
 
     Route::get('/admin/contact-us', AdminContactComponent::class)->name('admin.contact');
+    Route::get('/admin/settings', AdminSettingComponent::class)->name('admin.settings');
+
     
 });
