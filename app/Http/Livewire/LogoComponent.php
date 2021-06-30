@@ -9,7 +9,7 @@ class LogoComponent extends Component
 {
     public function render()
     {
-        $logo = HomeLogo::all();
-        return view('livewire.logo-component',['logo' => $logo])->layout('layouts.base');
+        $logo = HomeLogo::find(1);
+        return view('livewire.logo-component',['logo' => $logo]);
     }
 }
