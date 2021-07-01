@@ -149,6 +149,8 @@
 
 								@endif
 							</ul>
+
+
 						</div>
 					</div>
 				</div>
@@ -210,10 +212,18 @@
 								</li>
 								<li class="menu-item">
 									<a href="/contact-us" class="link-term mercado-item-title">Contact Us</a>
-								</li>																	
+								</li>
+								<li class="menu-item">
+									<a href="/contact-us" class="link-term mercado-item-title">Contact Us</a>
+								</li>
+																									
 							</ul>
 						</div>
 					</div>
+
+					{{-- inicio --}}
+						
+					{{-- fin --}}
 				</div>
 			</div>
 		</div>
