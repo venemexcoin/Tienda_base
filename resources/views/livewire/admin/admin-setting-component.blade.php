@@ -53,10 +53,10 @@
                         </div>
 
                         <div class="form-group">
-                            <label class="col-md-4 control-label">Twiter</label>
+                            <label class="col-md-4 control-label">Twitter</label>
                             <div class="col-md-4">
-                                <input type="text" placeholder="Twiter" class="form-control input-md" wire:model="twiter">
-                                @error('twiter') <p class="text-danger">{{$message}}</p> @enderror
+                                <input type="text" placeholder="Twitter" class="form-control input-md" wire:model="twitter">
+                                @error('twitter') <p class="text-danger">{{$message}}</p> @enderror
                             </div>
                         </div>
 
